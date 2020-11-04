@@ -1,27 +1,17 @@
-# WebDictionary
+## Web Dictionary (WIP)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.11.
+I was so pissed off from nowadays dictionary.
 
-## Development server
+Problem 1: only can search one words at one screen, meaning that I need to delete all the text and key in a new text to do a new search.
+Problem 2: After those hustle from problem 1, finally I found my definition for my words. But when I get back to my books, I forget which sentence I last read..F\$%K..
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## SPEED LIGHTNING THUNDER BOLT DICTIONARY
 
-## Code scaffolding
+So yeah, gonna create this speed and convinient web ditionary to solve above problems.
+Idea was in a screen, will have multiple cards/panel, each cards/panel equals to 1 words search.
+each cards/panel can be fully controled by keyboards. eg, press 1 will focus to panel 1, press 2 will focus to panel 2
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## URBAN API
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+this web app is using free public web api, urban dictionary. source = https://www.urbandictionary.com/
+So it is not actually a english dictionary, but ya since its free, I am going temporary use it as my dictionary.

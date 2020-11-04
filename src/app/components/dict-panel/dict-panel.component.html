@@ -6,3 +6,6 @@
     <app-dict-panel-card [definition]="listOfDefine[0].definition"></app-dict-panel-card>
     <app-dict-panel-card [definition]="listOfDefine[1].definition"></app-dict-panel-card>
 </div>
+
+<div *ngIf="toggle">Secret text</div>
+<button (click)="onBtnClick()">click me</button>
