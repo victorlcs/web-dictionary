@@ -1,4 +1,4 @@
-## Web Dictionary (WIP)
+## Web Dictionary (WIP ANGULAR 9 APP)
 
 I was so pissed off from nowadays dictionary.
 
