@@ -7,5 +7,6 @@
     <app-dict-panel-card [definition]="listOfDefine[1].definition"></app-dict-panel-card>
 </div>
 
-<div *ngIf="toggle">Secret text</div>
-<button (click)="onBtnClick()">click me</button>
+<ng-container *ngFor="let i of [].constructor(numberOfPanel)" class="row">
+    <app-dict-panel-card [definition]="listOfDefine[0].definition"></app-dict-panel-card>
+</ng-container>

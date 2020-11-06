@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Definition } from '../models/Definition';
 
 @Injectable({
@@ -8,19 +9,14 @@ import { Definition } from '../models/Definition';
 })
 export class DictionaryService {
   words: string = 'sup';
-
+  apiUrl = environment.apiUrl;
+  apiHeader = environment.apiHeader;
   constructor(private http: HttpClient) {}
 
   defineWord() {
     let headers = new HttpHeaders();
-    headers = headers.append(
-      'x-rapidapi-host',
-      'mashape-community-urban-dictionary.p.rapidapi.com'
-    );
-    headers = headers.append(
-      'x-rapidapi-key',
-      'a793f62aacmshb9779ee844741f5p127045jsn24234269d0ff'
-    );
+    headers = headers.append(this.apiHeader.host, this.apiHeader.hostValue);
+    headers = headers.append(this.apiHeader.key, this.apiHeader.keyValue);
 
     // headers: {
     //   'x-rapidapi-host':
@@ -30,7 +26,7 @@ export class DictionaryService {
     // }
     const params = new HttpParams().append('term', this.words);
     return this.http
-      .get('https://mashape-community-urban-dictionary.p.rapidapi.com/define', {
+      .get(this.apiUrl, {
         headers,
         params,
       })

@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://mashape-community-urban-dictionary.p.rapidapi.com/define',
+  apiHeader: {
+    host: 'x-rapidapi-host',
+    hostValue: 'mashape-community-urban-dictionary.p.rapidapi.com',
+    key: 'x-rapidapi-key',
+    keyValue: 'a793f62aacmshb9779ee844741f5p127045jsn24234269d0ff',
+  },
 };
 
 /*

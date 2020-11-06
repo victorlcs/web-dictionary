@@ -9,16 +9,12 @@ import { DictionaryService } from 'src/app/services/dictionary.service';
 })
 export class DictPanelComponent implements OnInit {
   listOfDefine: Definition[];
-  toggle = true;
+  numberOfPanel: number = 5;
   constructor(private dictServices: DictionaryService) {}
 
   ngOnInit(): void {
     this.dictServices
       .defineWord()
       .subscribe((result) => (this.listOfDefine = result));
-  }
-
-  onBtnClick() {
-    this.toggle = this.toggle ? false : true;
   }
 }
