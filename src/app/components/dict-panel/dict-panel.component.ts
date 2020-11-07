@@ -8,13 +8,8 @@ import { DictionaryService } from 'src/app/services/dictionary.service';
   styleUrls: ['./dict-panel.component.scss'],
 })
 export class DictPanelComponent implements OnInit {
-  listOfDefine: Definition[];
   numberOfPanel: number = 5;
-  constructor(private dictServices: DictionaryService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.dictServices
-      .defineWord()
-      .subscribe((result) => (this.listOfDefine = result));
-  }
+  ngOnInit(): void {}
 }

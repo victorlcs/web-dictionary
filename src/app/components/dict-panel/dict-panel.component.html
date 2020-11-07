@@ -1,12 +1,9 @@
-<ul *ngFor="let item of listOfDefine">
-    <li>{{item.definition}}</li>
-</ul>
 
-<div *ngIf="listOfDefine" class="row">
-    <app-dict-panel-card [definition]="listOfDefine[0].definition"></app-dict-panel-card>
-    <app-dict-panel-card [definition]="listOfDefine[1].definition"></app-dict-panel-card>
+
+<div class="row">
+    <ng-container *ngFor="let i of [].constructor(numberOfPanel); let a = index" >
+        <app-dict-panel-card [cardIndex]="a+1"></app-dict-panel-card>
+    </ng-container> 
 </div>
 
-<ng-container *ngFor="let i of [].constructor(numberOfPanel)" class="row">
-    <app-dict-panel-card [definition]="listOfDefine[0].definition"></app-dict-panel-card>
-</ng-container>
+

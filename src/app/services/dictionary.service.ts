@@ -11,20 +11,20 @@ export class DictionaryService {
   words: string = 'sup';
   apiUrl = environment.apiUrl;
   apiHeader = environment.apiHeader;
+
   constructor(private http: HttpClient) {}
 
-  defineWord() {
+  defineWord(word: string) {
     let headers = new HttpHeaders();
     headers = headers.append(this.apiHeader.host, this.apiHeader.hostValue);
     headers = headers.append(this.apiHeader.key, this.apiHeader.keyValue);
-
     // headers: {
     //   'x-rapidapi-host':
     //     'mashape-community-urban-dictionary.p.rapidapi.com',
     //   'x-rapidapi-key':
     //     'a793f62aacmshb9779ee844741f5p127045jsn24234269d0ff',
     // }
-    const params = new HttpParams().append('term', this.words);
+    const params = new HttpParams().append('term', word);
     return this.http
       .get(this.apiUrl, {
         headers,

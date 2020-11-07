@@ -1,4 +1,15 @@
-<div class="card">
+<div class="card card-{{cardIndex}}">
+    <label>
+        Word :
+        <input #input class="word-input" type="text" [formControl]="searchForm">
+    </label>
+
+    <button #searchBtn class="search-btn" (click)="onSearch()">Search</button>
     
-    <p>{{definition}}</p> 
+    <div class="card-body">
+        <p>Definition :</p> 
+        <p *ngIf="listOfDefine">{{listOfDefine[0].definition}}</p>
+        <p>Example :</p>
+        <p *ngIf="listOfDefine">{{listOfDefine[0].example}}</p>
+    </div>
 </div>
