@@ -1,9 +1,17 @@
 
+<!-- <div [ngClass]="{'row': a === 0 || a % 3 === 0}"></div> -->
 
-<div class="row">
-    <ng-container *ngFor="let i of [].constructor(numberOfPanel); let a = index" >
-        <app-dict-panel-card [cardIndex]="a+1"></app-dict-panel-card>
-    </ng-container> 
-</div>
+    <!-- <ng-container *ngFor="let i of [].constructor(numberOfPanel); let a = index"> -->
+    <div class="row">
+        <ng-container *ngFor="let i of listOfPanel; let a = index">
+            <ng-container *ngIf="listOfPanel"  >
+                    
+                        <app-dict-panel-card [cardIndex]="a+1" class="col-md-4"></app-dict-panel-card>
+                 
+                   
+            </ng-container>
+        </ng-container> 
+    </div>
+    
 
 

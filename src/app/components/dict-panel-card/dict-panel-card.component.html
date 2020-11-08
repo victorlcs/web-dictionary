@@ -1,15 +1,18 @@
 <div class="card card-{{cardIndex}}">
-    <label>
-        Word :
-        <input #input class="word-input" type="text" [formControl]="searchForm">
-    </label>
-
-    <button #searchBtn class="search-btn" (click)="onSearch()">Search</button>
-    
+    <div class="card-header">
+        Panel {{cardIndex}}
+    </div>
     <div class="card-body">
-        <p>Definition :</p> 
-        <p *ngIf="listOfDefine">{{listOfDefine[0].definition}}</p>
-        <p>Example :</p>
-        <p *ngIf="listOfDefine">{{listOfDefine[0].example}}</p>
+        <div class="card-title">
+            <input #input class="word-input form-control" type="text" [formControl]="searchForm"
+            placeholder="Word to search">
+        <button #searchBtn class="btn search-btn" (click)="onSearch()">Search</button>
+        </div>
+        <div class="card-text">
+            <p>Definition :</p>
+            <p *ngIf="listOfDefine">{{listOfDefine[0].definition}}</p>
+            <p>Example :</p>
+            <p *ngIf="listOfDefine">{{listOfDefine[0].example}}</p>
+        </div>
     </div>
 </div>

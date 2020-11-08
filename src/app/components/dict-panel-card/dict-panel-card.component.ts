@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { EventManager } from '@angular/platform-browser';
+import { Subject } from 'rxjs';
 import { Definition } from 'src/app/models/Definition';
 import { DictionaryService } from 'src/app/services/dictionary.service';
 import { PanelService } from 'src/app/services/panel.service';
@@ -18,7 +19,12 @@ import { PanelService } from 'src/app/services/panel.service';
   styleUrls: ['./dict-panel-card.component.scss'],
 })
 export class DictPanelCardComponent implements OnInit {
+  /*The purpose of using asObservable*/
+  /*Other components could not .next() to listOfDefine, but other components can .subscribe() to watchListOfDefine$ */
+  // private listOfDefine = new Subject<Definition[]>();
+  // public watchListOfDefine$ = this.listOfDefine.asObservable();
   listOfDefine: Definition[];
+
   @Input() cardIndex: number;
 
   searchForm = new FormControl('');
@@ -46,8 +52,12 @@ export class DictPanelCardComponent implements OnInit {
   //Hostlistener
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
-    //console.log(event);
-    if (event.key === this.cardIndex.toString()) {
+    console.log(event);
+    if (
+      event.key === this.cardIndex.toString() &&
+      this.panelServices.getGenInputFocus === false
+    ) {
+      console.log(this.panelServices.getGenInputFocus);
       this.panelServices.setCurPanel = event.key;
       this.input.nativeElement.focus();
       event.preventDefault();

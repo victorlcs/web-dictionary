@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Definition } from 'src/app/models/Definition';
 import { DictionaryService } from 'src/app/services/dictionary.service';
+import { PanelService } from 'src/app/services/panel.service';
 
 @Component({
   selector: 'app-dict-panel',
@@ -8,8 +9,13 @@ import { DictionaryService } from 'src/app/services/dictionary.service';
   styleUrls: ['./dict-panel.component.scss'],
 })
 export class DictPanelComponent implements OnInit {
-  numberOfPanel: number = 5;
-  constructor() {}
+  listOfPanel = [];
+  constructor(private panelServices: PanelService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.panelServices.panelsubject$.subscribe((result) => {
+      this.listOfPanel = result;
+      console.log(result);
+    });
+  }
 }
