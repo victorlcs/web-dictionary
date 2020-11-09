@@ -6,11 +6,11 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">About</a>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="openModal(aboutTemplate)">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tutorial</a>
+          <a class="nav-link" href="#" (click)="openModal(tutorialTemplate)">Tutorial</a>
         </li>
       </ul>
       <div class="form-inline my-2 my-lg-0">
@@ -20,3 +20,38 @@
       </div>
     </div>
   </nav>
+
+
+  <ng-template #aboutTemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">About</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>This is a Angular's web dictionary.</p> 
+      <p>Build with Bootstrap 4, NgxBootstrap, and public API (Urban Distionary).</p>
+      <p>This app is solely for educational purpose. </p>
+      <p>Enjoy!</p>
+    </div>
+  </ng-template>
+
+  <ng-template #tutorialTemplate>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Tutorial</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h4>Step 1</h4>
+      <p>At top righ corner, key in number of panel and press generate. only allow 1 - 9.</p> 
+      <h4>Step 2</h4>
+      <p>Using keyboard key 1 to 9 to focus the panel. Example: pressing "1" in keyboard will focus to "Panel-1"</p> 
+      <h4>Step 3</h4>
+      <p>Type your word to be search from.</p> 
+      <h4>Step 3</h4>
+      <p>Press keyboard "Enter" to search the word.</p> 
+    </div>
+  </ng-template>

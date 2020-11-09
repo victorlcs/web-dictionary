@@ -10,6 +10,8 @@ import { DictPanelCardComponent } from './components/dict-panel-card/dict-panel-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavHeaderComponent } from './components/nav-header/nav-header.component';
 
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,7 @@ import { NavHeaderComponent } from './components/nav-header/nav-header.component
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

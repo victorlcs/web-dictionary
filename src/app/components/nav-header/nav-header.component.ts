@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { PanelService } from 'src/app/services/panel.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-nav-header',
@@ -8,8 +9,12 @@ import { PanelService } from 'src/app/services/panel.service';
 })
 export class NavHeaderComponent implements OnInit {
   genInput: number;
+  modalRef: BsModalRef;
 
-  constructor(private panelServices: PanelService) {}
+  constructor(
+    private panelServices: PanelService,
+    private modalService: BsModalService
+  ) {}
 
   ngOnInit(): void {}
   onGenPanel() {
@@ -25,5 +30,9 @@ export class NavHeaderComponent implements OnInit {
   onBlur() {
     console.log('on blur!');
     this.panelServices.setGenInpputFocus = false;
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 }
