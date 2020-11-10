@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="card-title">
             <input #input class="word-input form-control" type="text" [formControl]="searchForm"
-            placeholder="Word to search">
+            placeholder="Word to search" (focus)="onFocus()">
         <button #searchBtn class="btn search-btn" (click)="onSearch()">Search</button>
         </div>
         <div class="card-text">

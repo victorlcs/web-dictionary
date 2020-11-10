@@ -48,7 +48,9 @@ export class DictPanelCardComponent implements OnInit {
         });
     }
   }
-
+  onFocus() {
+    this.panelServices.setCurPanel = this.cardIndex.toString();
+  }
   //Hostlistener
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
