@@ -14,4 +14,4 @@ This web app is using free public web api, urban dictionary. source = https://ww
 So it is not actually a english dictionary, but ya since its free, I am going temporary use it as my dictionary.
 
 ## Project Link
-(Click Here)[https://victorlcs-web-dict.herokuapp.com/]
+https://victorlcs-web-dict.herokuapp.com/
